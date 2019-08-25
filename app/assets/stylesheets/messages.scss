@@ -1,0 +1,59 @@
+// Place all the styles related to the messages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+$myBGColor: #326363;
+$myTableColorOdd: #ccdbcb;
+$myTableColorEven: #c0c5c1;
+$myExtraColor: #30292f;
+$myFontColor: #fcfcfc;
+$myTableAccent: #02111b;
+
+
+body{
+	font-family: Times-New-Roman;
+	color: $myFontColor;
+	background-color: $myBGColor;
+}
+
+#message_text{
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 70px;
+	width: 59.7%;
+	background-color: $myTableColorEven;
+	font-family: Times-New-Roman;
+	font-size: 16px;
+}
+
+#submit{
+	text-align:center;
+}
+
+table {
+  color: $myTableAccent;
+  margin: auto;
+  margin-top: 50px;
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 60%;
+  border: 1px solid $myTableAccent;
+}
+
+.date{
+	text-align: left;
+	width: 1%;
+}
+
+td {
+  text-align: left;
+  padding: 6px;
+}
+
+tr:nth-child(even) {
+  background-color: $myTableColorEven;
+}
+
+tr:nth-child(odd) {
+  background-color: $myTableColorOdd;
+}

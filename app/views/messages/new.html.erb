@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+	.mconfs
+</style>
+</head>
+<body>
+<%= form_with scope: :message, url: messages_path, local: false do |form| %>
+  <div id="submit">
+    <p>
+      <%= form.text_area :text, placeholder: "Enter your message here"%>
+    </p>
+ 
+    <p>
+      <%= form.submit %>
+    </p>
+  </div>
+<% end %>
+
+<table>
+  <% @messages.each do |message| %>
+    <tr>
+      <td class="date"><%= message.created_at.strftime("%d/%m/%Y:") %></td>
+      <td><%= auto_link(message.text.gsub(/mconf/i, "<b class='mconfs'>Mconf</b>").html_safe) %></td>
+    </tr>
+  <% end %>
+</table>
+
+<script>
+  var x = document.getElementsByClassName("mconfs");
+  colors = ["#481E9D","#8D74C0","#CA4B57","#2B2D42","#1C77C3","#81B29A","#E98039"]
+  for (var i = 0; i < x.length; i++) {
+  	var j = Math.floor(Math.random() * 7);
+    	x[i].style.color = colors[j];
+  	}
+</script>
+</body>
+</html>
